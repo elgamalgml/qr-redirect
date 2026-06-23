@@ -1,2 +1,25 @@
-# qr-redirect
-code users to App Store or Google Play
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    const iosLink = "https://apps.apple.com/eg/app/hemam-disabled-transport-app/id6450216720";
+    const androidLink = "https://play.google.com/store/apps/details?id=sa.com.hemam.transportation.riyadh.passenger&hl=en_SG&pli=1";
+    const fallbackLink = "https://play.google.com/store/apps/details?id=sa.com.hemam.transportation.riyadh.passenger&hl=en_SG&pli=1";
+
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    if (/iPhone|iPad|iPod/i.test(userAgent)) {
+      window.location.href = iosLink;
+    } else if (/Android/i.test(userAgent)) {
+      window.location.href = androidLink;
+    } else {
+      window.location.href = fallbackLink;
+    }
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
